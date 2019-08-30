@@ -8,7 +8,7 @@ Date: Aug 29, 2019
 """
 
 # can be run in cmd line
-def main():
+def main(input):
     """
     Spaces        Format
     1             &nbsp;
@@ -27,11 +27,26 @@ def main():
     ( . _.) < Hello World
     |v   |
      v--v
+     
+    Input: file
     
     """
-    import sys
-    out = sys.argv[1]
-    print(out)
+    
+    print("Cat! \nI'm a kitty cat. \nAnd I dance dance dance,"
+    + "\nand I dance dance dance")
+    print(input)
+    return("success")
 
 if __name__ == '__main__':
-    main()
+    """
+    Handles file I/O.
+    Input: txt file from args
+    Output: txt file named "output.txt"
+    """
+    import sys
+    input = open(sys.argv[1], "r")
+    text = input.readlines()
+    output = open("output.txt", "w")
+    output.write(main(text))
+    input.close()
+    output.close()
