@@ -48,17 +48,17 @@ def main(input):
     return(output)
 
 def txtToMd(input):
-    output = input.replace("    ", "&emsp;")
-    output = output.replace("  ", "&ensp;")
+    output = input.replace("    ", SPC[4])
+    output = output.replace("  ", SPC[2])
     # only needed if following newline
     if output[0] == " ":
-        output = output.replace(" ", "&nbsp;", 1)
+        output = output.replace(" ", SPC[1], 1)
     return(output)
 
 def mdToTxt(input):
-    output = input.replace("&emsp;", "    ")
-    output = output.replace("&ensp;", "  ")
-    output = output.replace("&nbsp;", " ")
+    output = input.replace("&emsp;", SPC[4])
+    output = output.replace("&ensp;", SPC[2])
+    output = output.replace("&nbsp;", SPC[1])
     return(output)
 
 def optMd(line):
