@@ -7,7 +7,7 @@ Author: Kelly Mo
 Date: Aug 29, 2019
 """
 
-SPC = ["","&nbsp;","&ensp;","&ensp; ","&emsp;","&emsp; "]
+SPC = [" ","&nbsp;","&ensp;","&ensp;[SPACE]","&emsp;","&emsp;[SPACE]"]
 # Note: 5 is the largest combination of "&[en/em/np]sp;" and [SPACE] without
 # using another "&[en/em/np]sp;"
 
@@ -38,13 +38,13 @@ def main(input):
     
     """
     
-    print("Cat! \nI'm a kitty cat. \nAnd I dance dance dance,"
-    + "\nand I dance dance dance")
+    #print("Cat! \nI'm a kitty cat. \nAnd I dance dance dance,"
+    #+ "\nand I dance dance dance")
     output = ""
     for line in input:    
-        print(line)
+        #print(line)
         output += optMd(line)
-    print(output)
+    #print(output)
     return(output)
 
 def txtToMd(input):
@@ -75,20 +75,26 @@ def optMd(line):
     output = line;
     if line[0] == ' ':
         output = output.replace(" ", SPC[1], 1)
-    count = 0;
+    count = 0
     for char in line:
-        if char == ' ':
-            count += 1
-        else:
-            count = 0
-            if count > 1:
+        if (char != " "):
+            if (count > 1):
                 index = 5
                 while index != 0:
                     div = count//index
                     rem = count%index
-                    output.replace(" "*count, SPC[index], count//index)
-                    if rem == 0: index = 0
-                    else: index -= 1
+                    output = output.replace(" "*index, SPC[index], div)
+                    if rem == 0: 
+                        index = 0
+                    else: 
+                        index -= 1
+            count = 0
+        else:
+            count += 1
+    # replace placeholder spaces with actual space
+    output = output.replace("[SPACE]", SPC[0])
+    # TEST
+    # print(mdToTxt(output))
     return(output)
 
 if __name__ == '__main__':
@@ -102,8 +108,9 @@ if __name__ == '__main__':
     import sys
     input = open(sys.argv[1], "r")
     textIn = input.readlines()
-    print(textIn)
+    # print(textIn)
     input.close()
     output = open("output.txt", "w")
     output.write(main(textIn))
     output.close()
+    
