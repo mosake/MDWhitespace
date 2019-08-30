@@ -28,14 +28,31 @@ def main(input):
     |v   |
      v--v
      
-    Input: file
+    Input: string list
+    Output: string
     
     """
     
     print("Cat! \nI'm a kitty cat. \nAnd I dance dance dance,"
     + "\nand I dance dance dance")
-    print(input)
-    return("success")
+    output = ""
+    for line in input:    
+        print(line)
+        output += txtToMd(line)
+    print(output)
+    return(output)
+
+def txtToMd(input):
+    output = input.replace("    ", "&emsp;")
+    output = output.replace("  ", "&ensp;")
+    output = output.replace(" ", "&nbsp;")
+    return(output)
+
+def mdToTxt(input):
+    output = input.replace("&emsp;", "    ")
+    output = output.replace("&ensp;", "  ")
+    output = output.replace("&nbsp;", " ")
+    return(output)
 
 if __name__ == '__main__':
     """
@@ -45,8 +62,8 @@ if __name__ == '__main__':
     """
     import sys
     input = open(sys.argv[1], "r")
-    text = input.readlines()
-    output = open("output.txt", "w")
-    output.write(main(text))
+    textIn = input.readlines()
     input.close()
+    output = open("output.txt", "w")
+    output.write(main(textIn))
     output.close()
