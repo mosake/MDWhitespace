@@ -22,8 +22,16 @@ def main():
     &nbsp;[SPACE]&nbsp; returns three spaces
     hi[SPACE]&nbsp;[SPACE]&nbsp;[SPACE] returns "hi     " (5 spaces)
     
+    Test case/cat
+     ^---^
+    ( . _.) < Hello World
+    |v   |
+     v--v
+    
     """
     import sys
+    out = sys.argv[1]
+    print(out)
 
 if __name__ == '__main__':
     main()
