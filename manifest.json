@@ -1,0 +1,20 @@
+{
+  "short_name": "MDW",
+  "name": "MarkdownWhitespaceConverter",
+  "description": "A simple whitespace converter script. As a progressive web app because I want easy access from my phone.",
+  "display": "standalone",
+  "background_color": "#DDD",
+  "theme_color": "#DDD",
+  "icons": [
+    {
+      "src": "cutenonthreateningicon192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "cutenonthreateningicon512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
