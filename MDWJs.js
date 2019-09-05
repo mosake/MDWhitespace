@@ -33,3 +33,28 @@ function mdToTxt(input) {
 	}
     return(input);
 }
+
+function themeUpdate(type) {
+	const root = document.documentElement;
+	var colours = ["","","","",""];
+	switch (type){
+		case "day":
+			colours = ['#F0EDE5', '#1F2833', '#A5DD96', '#1E9EB9', '#F0EDE5'];
+			break;
+		case "night":
+			colours = ['#080135', '#F0EDE5', '#008393', '#602C50', '#080135'];
+			break;
+		case "pastel":
+			colours = ["#76ADA8", '#CFD7C0', '#789561', '#E6A99F', '#76ADA8'];
+			break;
+		case "neon":
+			colours = ['#b967ff', '#05ffa1', '#ff71ce', '#01cdfe', 'black'];
+			break;
+	}
+
+	root.style.setProperty('--bg', colours[0]);
+	root.style.setProperty('--textCol', colours[1]);
+	root.style.setProperty('--buttonCol', colours[2]);
+	root.style.setProperty('--borderCol', colours[3]);
+	root.style.setProperty('--textBox', colours[4]);
+}

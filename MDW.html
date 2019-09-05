@@ -10,22 +10,17 @@
 	<textarea id="userIn" AutoSize = true cols="50" rows="5">
 	Enter some text here...
 	</textarea>
-	<br />
-	<br />
-	<button id="run" onclick="run()">Push Me!</button>
-	<br />
-	<br />
-	<br />
+	<button id="run" onclick="run()">R U N</button>
 	<textarea id="userOut" cols="50" rows="5">
 	</textarea>
 
 	<script src="MDWJs.js">
 	</script>
 	<div id="theme">
-	  <button id="day">Day</button>
-	  <button id="night">Night</button>
-	  <button id="pastel">Pastel</button> 
-	  <button id="neon">Neon</button> 
+	  <button id="day" onclick='themeUpdate("day")'>DAY</button>
+	  <button id="night" onclick='themeUpdate("night")'>NIGHT</button>
+	  <button id="pastel" onclick='themeUpdate("pastel")'>PASTEL</button> 
+	  <button id="neon" onclick='themeUpdate("neon")'>NEON</button> 
 	</div>
   </body>
 

@@ -1,13 +1,13 @@
 :root{
 	--bg: #1B1B1B;
-	--textCol: #DDD;
-	--buttonCol: #45A29E;
-	--borderCol: #66FCF1;
+	--textCol: #C5C6C7;
+	--buttonCol: #66FCF1;
+	--borderCol: #45A29E;
+	--textBox: #1F2833;
 }
 
 body{
 	background: var(--bg);
-	padding: 5px;
 	outline: 10px solid var(--buttonCol);
 	padding: 20px;
 	display: flex;
@@ -16,8 +16,8 @@ body{
 	flex-direction: column;
 }
 textarea {
-	color: solid var(--textCol);
-	background: var(--bg);
+	color: var(--textCol);
+	background: var(--textBox);
 	font-size:14px;
 	line-height:1.5;
 	font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
@@ -26,10 +26,13 @@ textarea {
 
 }
 button {
-	color: var(--bg);
-	background:#45A29E;
+	color: var(--buttonCol);
+	background:var(--borderCol);
 	font-size:14px;
-	padding: 5px;
+	padding: 4px;
 	font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	border: none;
+}
+div {
+	padding-top: 5px;
 }
