@@ -1,24 +1,35 @@
+:root{
+	--bg: #1B1B1B;
+	--textCol: #DDD;
+	--buttonCol: #45A29E;
+	--borderCol: #66FCF1;
+}
+
 body{
-	background:#1B1B1B;
+	background: var(--bg);
 	padding: 5px;
-	outline: 10px solid #DDD;
+	outline: 10px solid var(--buttonCol);
 	padding: 20px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: column;
 }
 textarea {
-	color:#DDD;
-	background:#1B1B1B;
+	color: solid var(--textCol);
+	background: var(--bg);
 	font-size:14px;
 	line-height:1.5;
 	font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	padding: 10px;
-	border: 1px solid #DDD;
+	border: 5px solid var(--borderCol);
 
 }
 button {
-	color:#1B1B1B;
-	background:#DDD;
+	color: var(--bg);
+	background:#45A29E;
 	font-size:14px;
+	padding: 5px;
 	font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-	outline: 2px solid #DDD;
-	outline-style: outset;
+	border: none;
 }
